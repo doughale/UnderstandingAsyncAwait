@@ -16,10 +16,10 @@ public class Program
         var cm = new CoffeeMaker();
 
         var turnOnTask = cm.TurnOn();
-        var waterTrack = MakeWaterReady(cm); // AddWater -> HeatWater
-        var beansTrack = MakeBeansReady(cm); // ScoopBeans -> LoadBeans
+        var waterTask = MakeWaterReady(cm); // AddWater -> HeatWater
+        var beansTask = MakeBeansReady(cm); // ScoopBeans -> LoadBeans
 
-        await Task.WhenAll(turnOnTask, waterTrack, beansTrack);
+        await Task.WhenAll(turnOnTask, waterTask, beansTask);
 
         await cm.BrewCoffee();
         await cm.PourCoffee();
